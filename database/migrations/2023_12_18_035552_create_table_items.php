@@ -19,20 +19,20 @@ class CreateTableItems extends Migration
             $table->string('itemName');
             $table->text('description');
             $table->string('classification');
-            $table->unsignedBigInteger('supplierId');
-            $table->float('cost', 8, 2);
-            $table->float('retailCost', 8, 2);
-            $table->float('techPrice', 8, 2);
+            // $table->unsignedBigInteger('supplier_id');
+            $table->float('cost', 8, 2)->nullable()->default(0);
+            $table->float('retailCost', 8, 2)->nullable()->default(0);
+            $table->float('techPrice', 8, 2)->nullable()->default(0);
             $table->enum('product', ['item', 'services']);
-            $table->date('expiry');
-            $table->integer('stock');
-            $table->string('batchNo');
+            $table->integer('stock')->nullable()->default(0);
             $table->timestamps();
 
-            $table->foreign('supplierId')
-            ->references('id')
-            ->on('tbl_suppliers')
-            ->onDelete('restrict');
+            $table->unique(['itemCode']);
+
+            // $table->foreign('supplier_id')
+            // ->references('id')
+            // ->on('tbl_suppliers')
+            // ->onDelete('restrict');
         });
     }
 

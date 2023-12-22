@@ -16,13 +16,11 @@ class Item extends Model
         'itemName', 
         'description',
         'classification',
-        'supplierId',
+        // 'supplierId',
         'cost',
         'retailCost',
         'techPrice',
         'product',
-        'expiry',
         'stock',
-        'batchNo',
     ];
 }

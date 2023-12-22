@@ -14,9 +14,7 @@ class CreateSuppliersTable extends Migration
      */
     public function up()
     {
-      $faker = Faker::create();
-
-      Schema::create('tbl_suppliers', function (Blueprint $table) use ($faker) {
+      Schema::create('tbl_suppliers', function (Blueprint $table) {
           $table->id();
           $table->string('supplierId');
           $table->string('supplierName');

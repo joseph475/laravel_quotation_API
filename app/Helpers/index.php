@@ -6,11 +6,7 @@ function fetchAllData ($modelParam) {
     $result = $model::all();
 
     if ($result) {
-      return [
-        'count' => $model::count(),
-        'data' => $result,
-        'status' => true
-      ];
+      return $result;
     } else {
       return [
         'message' => 'Data Empty'
@@ -55,7 +51,6 @@ function storeAllData ($data, $modelParam) {
     // query on updating items
     if ($data->isMethod('put')) {
       $result = $model::findOrFail($data->id)->update($postData);
-      
       if ($result) {
         return [
           'status' => $result,

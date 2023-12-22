@@ -39,12 +39,12 @@ class AddFakeDataToSuppliersTable extends Migration
      */
     public function down()
     {
-      Schema::table('tbl_suppliers', function (Blueprint $table) {
-        $table->dropColumn('supplierId');
-        $table->dropColumn('supplierName');
-        $table->dropColumn('mobileNo');
-        $table->dropColumn('address');
-        $table->dropColumn('termsApply');
-      });
+      // Schema::table('tbl_suppliers', function (Blueprint $table) {
+      //   $table->dropColumn('supplierId');
+      //   $table->dropColumn('supplierName');
+      //   $table->dropColumn('mobileNo');
+      //   $table->dropColumn('address');
+      //   $table->dropColumn('termsApply');
+      // });
     }
 }

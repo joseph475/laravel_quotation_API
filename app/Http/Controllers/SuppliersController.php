@@ -11,8 +11,10 @@ class SuppliersController extends Controller
 
   public function fetchData()
   {
-    $data = Supplier::all();
-    return response()->json(['data' => $data]);
+    $result = fetchAllData(self::MODEL);
+    if ($result) {
+      return $result;
+    }
   }
 
   public function store (Request $request) 

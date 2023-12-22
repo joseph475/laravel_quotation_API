@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
@@ -40,13 +38,13 @@ class AddFakeDataToCustomersTable extends Migration
      */
     public function down()
     {
-      Schema::table('tbl_customers', function (Blueprint $table) {
-        $table->dropColumn('custId');
-        $table->dropColumn('lastName');
-        $table->dropColumn('firstname');
-        $table->dropColumn('middleInitial');
-        $table->dropColumn('mobileNo');
-        $table->dropColumn('address');
-      });
+      // Schema::table('tbl_customers', function (Blueprint $table) {
+      //   $table->dropColumn('custId');
+      //   $table->dropColumn('lastName');
+      //   $table->dropColumn('firstname');
+      //   $table->dropColumn('middleInitial');
+      //   $table->dropColumn('mobileNo');
+      //   $table->dropColumn('address');
+      // });
     }
 }

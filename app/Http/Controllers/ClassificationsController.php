@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CustomersController extends Controller
+class ClassificationsController extends Controller
 {
-  const MODEL = 'Customer';
+  const MODEL = 'Classification';
 
   public function fetchData()
   {
