@@ -18,8 +18,9 @@ class CreateTableItems extends Migration
             $table->string('itemCode');
             $table->string('itemName');
             $table->text('description');
-            $table->string('classification');
+            // $table->string('classification');
             // $table->unsignedBigInteger('supplier_id');
+            $table->unsignedBigInteger('class_id');
             $table->float('cost', 8, 2)->nullable()->default(0);
             $table->float('retailCost', 8, 2)->nullable()->default(0);
             $table->float('techPrice', 8, 2)->nullable()->default(0);
@@ -33,6 +34,11 @@ class CreateTableItems extends Migration
             // ->references('id')
             // ->on('tbl_suppliers')
             // ->onDelete('restrict');
+
+            $table->foreign('class_id')
+            ->references('id')
+            ->on('tbl_classifications')
+            ->onDelete('restrict');
         });
     }
 
@@ -44,5 +50,9 @@ class CreateTableItems extends Migration
     public function down()
     {
         Schema::dropIfExists('tbl_items');
+        Schema::table('tbl_items', function (Blueprint $table) {
+          $table->dropForeign(['class_id']);
+          $table->dropColumn('class_id');
+      });
     }
 }

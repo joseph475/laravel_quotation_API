@@ -12,18 +12,20 @@ class ItemsController extends Controller
 
   public function fetchData()
   {
-    $result = fetchAllData(self::MODEL);
+    // $result = Item::with('class_id')->get();  
+
+    $data = DB::table('tbl_items')
+    ->join('tbl_classifications', 'tbl_items.class_id', '=', 'tbl_classifications.id')
+    // ->join('tbl_purchases_receiving', 'tbl_items.id', '=', 'tbl_purchases_receiving.item_id')
+    ->select('tbl_items.*', 'tbl_classifications.*')
+    ->orderBy('tbl_items.itemName', 'asc')
+    ->get();
+
+    $result = response()->json($data);
+
     if ($result) {
       return $result;
     }
-    // $data = DB::table('tbl_items')
-    // ->join('tbl_suppliers', 'tbl_items.supplier_id', '=', 'tbl_suppliers.id')
-    // // ->join('tbl_purchases_receiving', 'tbl_items.id', '=', 'tbl_purchases_receiving.item_id')
-    // ->select('tbl_items.*', 'tbl_suppliers.supplierName')
-    // ->orderBy('tbl_items.itemName', 'asc')
-    // ->get();
-
-    // return response()->json($data);
   }
 
   public function store (Request $request) 

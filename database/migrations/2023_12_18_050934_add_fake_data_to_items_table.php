@@ -28,7 +28,7 @@ class AddFakeDataToItemsTable extends Migration
             'itemCode' => $faker->unique()->randomNumber(8),
             'itemName' => $faker->word,
             'description' => $faker->sentence,
-            'classification' => $faker->word,
+            'class_id' => rand(1, 15),
             // 'supplier_id' => $faker->randomElement($suppliers),
             'cost' => $price,
             'retailCost' => $cost,

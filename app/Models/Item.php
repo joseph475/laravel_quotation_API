@@ -15,7 +15,7 @@ class Item extends Model
         'itemCode',
         'itemName', 
         'description',
-        'classification',
+        'class_id',
         // 'supplierId',
         'cost',
         'retailCost',
