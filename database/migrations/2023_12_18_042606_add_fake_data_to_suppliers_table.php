@@ -17,7 +17,7 @@ class AddFakeDataToSuppliersTable extends Migration
     {
       $faker = Faker::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 15; $i++) {
             $data = [
                 'supplierId' => $faker->unique()->randomNumber(8),
                 'supplierName' => $faker->company,

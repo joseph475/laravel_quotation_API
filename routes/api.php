@@ -6,6 +6,8 @@ use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ClassificationsController;
+use App\Http\Controllers\ModelsController;
+use App\Http\Controllers\BrandsController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -43,3 +45,13 @@ Route::get('/classifications', [ClassificationsController::class, 'fetchData']);
 Route::post('/classification', [ClassificationsController::class, 'store']);
 Route::put('/classification', [ClassificationsController::class, 'store']);
 Route::delete('/classification/{id}', [ClassificationsController::class, 'destroy']); 
+
+Route::get('/models', [ModelsController::class, 'fetchData']);
+Route::post('/model', [ModelsController::class, 'store']);
+Route::put('/model', [ModelsController::class, 'store']);
+Route::delete('/model/{id}', [ModelsController::class, 'destroy']);
+
+Route::get('/brands', [BrandsController::class, 'fetchData']);
+Route::post('/brand', [BrandsController::class, 'store']);
+Route::put('/brand', [BrandsController::class, 'store']);
+Route::delete('/brand/{id}', [BrandsController::class, 'destroy']); 
