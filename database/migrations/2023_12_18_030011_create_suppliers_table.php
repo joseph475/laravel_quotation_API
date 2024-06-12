@@ -14,6 +14,7 @@ class CreateSuppliersTable extends Migration
      */
     public function up()
     {
+      // Schema::dropIfExists('tbl_suppliers');
       Schema::create('tbl_suppliers', function (Blueprint $table) {
           $table->id();
           $table->string('supplierId');

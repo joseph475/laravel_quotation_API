@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class AddFakeDataToModelTable extends Migration
+class AddFakeDataToModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,7 +20,7 @@ class AddFakeDataToModelTable extends Migration
             'name' =>  $faker->unique()->word,
         ];
 
-        DB::table('tbl_model')->insert($data);
+        DB::table('tbl_models')->insert($data);
       }
     }
 

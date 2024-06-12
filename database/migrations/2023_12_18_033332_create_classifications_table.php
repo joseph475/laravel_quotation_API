@@ -13,11 +13,12 @@ class CreateClassificationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_classifications', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-        });
+      Schema::dropIfExists('tbl_classifications');
+      Schema::create('tbl_classifications', function (Blueprint $table) {
+          $table->id();
+          $table->string('name');
+          $table->timestamps();
+      });
     }
 
     /**

@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ItemsController extends Controller
 {
-  const MODEL = 'Item';
-
-  public function fetchData()
+  public function fetchItems()
   {
     // $result = Item::with('class_id')->get();  
 
@@ -23,24 +21,6 @@ class ItemsController extends Controller
 
     $result = response()->json($data);
 
-    if ($result) {
-      return $result;
-    }
-  }
-
-  public function store (Request $request) 
-  {
-    $result = storeAllData ($request, self::MODEL);
-
-    if ($result) {
-      return $result;
-    }
-  }
-
-  public function destroy ($id) 
-  {
-    $result = deleteRecord($id, self::MODEL);
-    
     if ($result) {
       return $result;
     }

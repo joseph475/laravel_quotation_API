@@ -14,8 +14,9 @@ class CreatePurchasesReceiveTable extends Migration
      */
     public function up()
     {
-      $suppliers = DB::table('tbl_suppliers')->pluck('id')->toArray();
+      // $suppliers = DB::table('tbl_suppliers')->pluck('id')->toArray();
 
+      Schema::dropIfExists('tbl_purchases_receiving');
       Schema::create('tbl_purchases_receiving', function (Blueprint $table) {
         $table->id();
         $table->string('purchaseNo');

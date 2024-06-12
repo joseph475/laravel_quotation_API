@@ -13,6 +13,7 @@ class CreateTableItems extends Migration
    */
   public function up()
   {
+    Schema::dropIfExists('tbl_items');
     Schema::create('tbl_items', function (Blueprint $table) {
       $table->id();
       $table->string('itemCode');

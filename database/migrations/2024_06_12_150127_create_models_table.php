@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateModelTable extends Migration
+class CreateModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateModelTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_models', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-        });
+      Schema::dropIfExists('tbl_models');
+      Schema::create('tbl_models', function (Blueprint $table) {
+          $table->id();
+          $table->string('name');
+          $table->timestamps();
+      });
     }
 
     /**

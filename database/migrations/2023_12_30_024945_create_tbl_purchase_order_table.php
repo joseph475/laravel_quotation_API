@@ -13,19 +13,20 @@ class CreateTblPurchaseOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_purchase_order', function (Blueprint $table) {
-          $table->id();
-          $table->string('invoiceNo');
-          $table->date('dateOrdered');
-          $table->string('encodedBy');
-          $table->unsignedBigInteger('supplier_id');
-          $table->timestamps();
+      Schema::dropIfExists('tbl_purchase_order');
+      Schema::create('tbl_purchase_order', function (Blueprint $table) {
+        $table->id();
+        $table->string('invoiceNo');
+        $table->date('dateOrdered');
+        $table->string('encodedBy');
+        $table->unsignedBigInteger('supplier_id');
+        $table->timestamps();
 
-          $table->foreign('supplier_id')
-          ->references('id')
-          ->on('tbl_suppliers')
-          ->onDelete('restrict');
-        });
+        $table->foreign('supplier_id')
+        ->references('id')
+        ->on('tbl_suppliers')
+        ->onDelete('restrict');
+      });
     }
 
     /**
